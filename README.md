@@ -19,7 +19,7 @@ start();
 function start() {
     const Player = require('./player/Player');
 
-    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER ID");
+    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER NAME");
 }
 ```
 
@@ -29,7 +29,7 @@ function start() {
 start();
 function start() {
     const Player = require('./player/Player');
-    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER ID");
+    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER NAME");
     setInterval(function () {
         if(Player.getLastMessage().includes("YOUR MESSAGE")){
             Player.sendMessage("Response!");
@@ -46,7 +46,7 @@ function start() {
 start();
 function start() {
     const Player = require('./player/Player');
-    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER ID");
+    Player.connect("Username", "SERVER ADDRESS", 19132, "OWNER NAME");
     
     // Player.moveTo(x, y, z);
 }
