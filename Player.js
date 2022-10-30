@@ -43,7 +43,7 @@ module.exports = {
 
         const eventFiles = fs.readdirSync('./listeners/').filter(file => file.endsWith('.js'));
         for (const file of eventFiles) {
-            const event = require(`./listeners/${file}`);
+            const event = require(`../listeners/${file}`);
             event.constructor(client);
         }
 
