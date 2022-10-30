@@ -2,8 +2,8 @@ const Player = require("../Player");
 module.exports = {
     constructor(client)
     {
-        client.on('packet', (packet) => {
-            //console.log(packet)
+        client.on('start_game', (packet) => {
+            Player.setPosition(packet.player_position);
         })
     },
 };

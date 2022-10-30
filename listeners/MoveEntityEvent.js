@@ -1,4 +1,4 @@
-const Player = require("../player/Player");
+const Player = require("../Player");
 module.exports = {
     constructor(client)
     {

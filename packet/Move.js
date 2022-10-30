@@ -1,3 +1,4 @@
+const Player = require("../Player");
 module.exports = {
     create(client, x, y, z)
     {
