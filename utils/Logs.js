@@ -27,7 +27,7 @@ module.exports = {
      */
     warn(message)
     {
-        console.warn(this.getFormatMessage(message));
+        console.warn(`${colors.cyan(`[${time}]`)} [BOT thread/WARN] => ${colors.yellow(message)}`);
     },
 
     /**
@@ -35,7 +35,7 @@ module.exports = {
      */
     error(message)
     {
-        console.error(this.getFormatMessage(message));
+        console.error(`${colors.cyan(`[${time}]`)} [BOT thread/ERROR] => ${colors.red(message)}`);
     },
 
     getFormatMessage(message)

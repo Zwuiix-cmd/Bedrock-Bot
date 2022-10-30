@@ -20,6 +20,6 @@ module.exports = {
             xuid: xuid,
             platform_chat_id: platformChatId,
             message: message
-        })
+        });
     }
 };

@@ -3,6 +3,8 @@ const Text = require('./packet/Text');
 const Move = require('./packet/Move');
 const BreakBlock = require('./packet/BreakBlock');
 
+const CommandLoader = require('./handlers/CommandLoader');
+
 const bedrock = require('bedrock-protocol');
 const fs = require("fs");
 
@@ -13,6 +15,8 @@ let client;
 let position;
 
 let botId;
+
+let commandPrefix = "?";
 
 let ownerId;
 let ownerUsername;
@@ -42,6 +46,8 @@ module.exports = {
             const event = require(`./listeners/${file}`);
             event.constructor(client);
         }
+
+        CommandLoader.constructor(client);
     },
 
     disconnect()
@@ -65,6 +71,16 @@ module.exports = {
     getBotId()
     {
         return botId;
+    },
+
+    setCommandPrefix(prefix)
+    {
+        commandPrefix=prefix;
+    },
+
+    getCommandPrefix()
+    {
+        return commandPrefix;
     },
 
     /**
@@ -144,6 +160,7 @@ module.exports = {
 
     moveTo(x, y, z)
     {
+        this.setPosition({x: x, y: y, z: z});
         Move.create(client, x, y, z);
     },
 
