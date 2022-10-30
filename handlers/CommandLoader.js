@@ -12,6 +12,7 @@ module.exports = {
 
             if(packet.source_name === client.username) return;
             if(!message.includes(Player.getCommandPrefix()))return;
+            if(message.includes(Player.getClient().username))return;
 
             const commandMsg = message.split('?');
             const args = commandMsg[1].split(/ +/g);
